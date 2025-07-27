@@ -50,7 +50,17 @@ const About = () => {
             </div>
 
             <div className="pt-6">
-              <Button variant="neon" size="lg" className="group">
+              <Button 
+                variant="neon" 
+                size="lg" 
+                className="group"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/resume.pdf';
+                  link.download = 'Tejas_M_Resume.pdf';
+                  link.click();
+                }}
+              >
                 <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
                 Download Resume
               </Button>

@@ -1,0 +1,134 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 1074
+>>
+stream
+BT
+/F1 18 Tf
+50 750 Td
+(TEJAS M) Tj
+0 -30 Td
+/F1 12 Tf
+(Web Developer & Innovator) Tj
+0 -40 Td
+(Email: tejas200412@gmail.com) Tj
+0 -20 Td
+(Phone: +91 XXXXXXXXXX) Tj
+
+0 -40 Td
+/F1 14 Tf
+(EDUCATION) Tj
+0 -25 Td
+/F1 11 Tf
+(B.E. in Computer Science) Tj
+0 -15 Td
+(Rajeev Institute of Technology, Hassan - GPA: 7.5) Tj
+0 -20 Td
+(XII - PCMB) Tj
+0 -15 Td
+(Masters PU College - GPA: 85) Tj
+0 -20 Td
+(X - SSLC) Tj
+0 -15 Td
+(Royale Apollo International School - GPA: 89) Tj
+
+0 -30 Td
+/F1 14 Tf
+(SKILLS) Tj
+0 -25 Td
+/F1 11 Tf
+(Frontend: HTML, CSS, WordPress) Tj
+0 -15 Td
+(Programming: Python, Java, C) Tj
+0 -15 Td
+(Tools: Figma, Tosca, Solid Edge) Tj
+0 -15 Td
+(Cloud: Microsoft Azure) Tj
+0 -15 Td
+(Other: OCR, Eye-Control Interfaces, Basic ML) Tj
+
+0 -30 Td
+/F1 14 Tf
+(EXPERIENCE) Tj
+0 -25 Td
+/F1 11 Tf
+(Project Manager \(Academic\)) Tj
+0 -15 Td
+(- Led development of AI-powered OCR chatbot) Tj
+0 -15 Td
+(- Integrated OpenAI GPT for conversational querying) Tj
+0 -20 Td
+(Web Developer Intern) Tj
+0 -15 Td
+(- Designed responsive interfaces using Figma) Tj
+0 -15 Td
+(- Collaborated on UI/UX prototype development) Tj
+
+0 -30 Td
+/F1 14 Tf
+(PROJECTS) Tj
+0 -25 Td
+/F1 11 Tf
+(OCR-AI Document Reader) Tj
+0 -15 Td
+(Smart Home Automation) Tj
+0 -15 Td
+(AI Virtual Assistant) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000079 00000 n 
+0000000136 00000 n 
+0000000271 00000 n 
+0000001399 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+1498
+%%EOF
