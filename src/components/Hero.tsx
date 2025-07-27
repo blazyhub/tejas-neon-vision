@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Download, Mail } from 'lucide-react';
-import tejasProfile from '@/assets/tejas-profile.jpg';
+import webDeveloperGif from '@/assets/web-developer-animated.gif';
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -26,7 +26,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-neon-blue shadow-glow animate-glow-pulse">
                 <img 
-                  src={tejasProfile} 
+                  src={webDeveloperGif} 
                   alt="Tejas M - Web Developer"
                   className="w-full h-full object-cover"
                 />
@@ -77,10 +77,10 @@ const Hero = () => {
           {/* Quick Contact */}
           <div className="flex justify-center space-x-6 pt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <a 
-              href="mailto:tejas2004@gmail.com"
+              href="mailto:tejas200412@gmail.com"
               className="text-muted-foreground hover:text-neon-cyan transition-colors duration-300"
             >
-              📧 tejas2004@gmail.com
+              📧 tejas200412@gmail.com
             </a>
           </div>
         </div>

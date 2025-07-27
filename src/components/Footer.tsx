@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-foreground">Quick Links</h3>
             <div className="grid grid-cols-2 gap-2">
-              {['Home', 'About', 'Experience', 'Skills', 'Services', 'Projects', 'Contact'].map((link) => (
+              {['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'].map((link) => (
                 <button
                   key={link}
                   onClick={() => {
@@ -45,11 +45,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-foreground">Let's Connect</h3>
             <div className="space-y-3">
               <a 
-                href="mailto:tejas2004@gmail.com"
+                href="mailto:tejas200412@gmail.com"
                 className="flex items-center space-x-3 text-muted-foreground hover:text-neon-blue transition-colors duration-300"
               >
                 <Mail className="h-4 w-4" />
-                <span className="text-sm">tejas2004@gmail.com</span>
+                <span className="text-sm">tejas200412@gmail.com</span>
               </a>
               <div className="flex space-x-4 pt-2">
                 <a 

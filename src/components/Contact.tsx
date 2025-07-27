@@ -41,8 +41,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email",
-      content: "tejas2004@gmail.com",
-      action: "mailto:tejas2004@gmail.com",
+      content: "tejas200412@gmail.com",
+      action: "mailto:tejas200412@gmail.com",
       color: "neon-blue"
     },
     {
