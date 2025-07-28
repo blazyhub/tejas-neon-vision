@@ -1,59 +1,66 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Download, GraduationCap, Award } from 'lucide-react';
+import { Download, Code, Lightbulb, Users, TrendingUp } from 'lucide-react';
 
 const About = () => {
-  const education = [
-    {
-      degree: "B.E. in Computer Science",
-      institution: "Rajeev Institute of Technology, Hassan",
-      grade: "GPA: 7.5",
-      icon: <GraduationCap className="h-6 w-6" />
-    },
-    {
-      degree: "XII - PCMB",
-      institution: "Masters PU College",
-      grade: "GPA: 85",
-      icon: <Award className="h-5 w-5" />
-    },
-    {
-      degree: "X - SSLC",
-      institution: "Royale Apollo International School",
-      grade: "GPA: 89",
-      icon: <Award className="h-5 w-5" />
-    }
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = "About Me";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 150);
+    
+    return () => clearInterval(timer);
+  }, []);
+
+  const stats = [
+    { icon: Code, number: "3+", label: "Years Experience", gradient: "from-neon-blue to-neon-cyan" },
+    { icon: Users, number: "50+", label: "Projects Completed", gradient: "from-neon-green to-neon-blue" },
+    { icon: Lightbulb, number: "100+", label: "Creative Solutions", gradient: "from-neon-purple to-neon-green" },
+    { icon: TrendingUp, number: "99%", label: "Client Satisfaction", gradient: "from-neon-cyan to-neon-purple" },
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-gradient-to-br from-background to-secondary/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            About <span className="bg-gradient-neon bg-clip-text text-transparent">Me</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-neon mx-auto"></div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Bio Section */}
-          <div className="space-y-6 animate-slide-in-left">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Motivated and detail-oriented <span className="text-neon-cyan font-semibold">Web Developer</span> with hands-on experience in designing and developing user-centric websites and mobile applications.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Proficient in <span className="text-neon-blue font-semibold">HTML/CSS, Python, Java, and WordPress</span>, with a strong foundation in cloud computing and automation tools. Quick learner with a passion for building efficient digital solutions.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                I specialize in creating seamless user experiences through innovative design and cutting-edge technology, always striving to bridge the gap between functionality and aesthetics.
-              </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-neon-green/10 text-neon-green px-4 py-2 rounded-full text-sm font-medium mb-6 animate-bounce-in">
+                <Users className="h-4 w-4" />
+                <span>About Me</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 min-h-[4rem]">
+                <span className="gradient-text-animate">
+                  {displayedText}
+                  <span className="typewriter"></span>
+                </span>
+              </h2>
+              <div className="space-y-6 text-lg text-muted-foreground animate-fade-in-up">
+                <p className="leading-relaxed">
+                  I'm a passionate <span className="text-neon-blue font-semibold">Web Developer & Innovator</span> with over 3 years of experience creating digital solutions that make a difference. My journey in technology is driven by curiosity and a desire to build applications that solve real-world problems.
+                </p>
+                <p className="leading-relaxed">
+                  I specialize in modern web technologies including <span className="text-neon-green font-semibold">React, TypeScript, Node.js</span>, and cloud platforms. My approach combines technical expertise with creative problem-solving to deliver exceptional user experiences.
+                </p>
+                <p className="leading-relaxed">
+                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring fellow developers. I believe in continuous learning and staying ahead of industry trends.
+                </p>
+              </div>
             </div>
 
-            <div className="pt-6">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
-                variant="neon" 
                 size="lg" 
-                className="group"
+                className="group bg-gradient-to-r from-neon-blue to-neon-cyan hover:shadow-neon transition-all duration-300"
                 onClick={() => {
                   window.open('https://pdf.ac/1x7vba', '_blank');
                 }}
@@ -61,45 +68,42 @@ const About = () => {
                 <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
                 View Resume
               </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-neon-green text-neon-green hover:bg-neon-green/10 transition-all duration-300"
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+              >
+                Let's Connect
+              </Button>
             </div>
           </div>
 
-          {/* Education Section */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold mb-6 text-center lg:text-left">
-              Educational <span className="text-neon-green">Background</span>
-            </h3>
-            
-            <div className="space-y-4">
-              {education.map((edu, index) => (
-                <Card 
-                  key={index} 
-                  className="bg-card/50 backdrop-blur-sm border-border hover:border-neon-blue/50 transition-all duration-300 hover:shadow-card group"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 p-2 bg-neon-blue/10 rounded-lg group-hover:bg-neon-blue/20 transition-colors duration-300">
-                        <div className="text-neon-blue">
-                          {edu.icon}
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <h4 className="font-semibold text-foreground mb-1">
-                          {edu.degree}
-                        </h4>
-                        <p className="text-muted-foreground text-sm mb-2">
-                          {edu.institution}
-                        </p>
-                        <p className="text-neon-cyan font-medium text-sm">
-                          {edu.grade}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          {/* Right Content - Stats */}
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => (
+              <div
+                key={stat.label}
+                className={`modern-card p-6 bg-gradient-to-br ${stat.gradient} rounded-xl animate-scale-in floating`}
+                style={{ 
+                  animationDelay: `${index * 200}ms`,
+                  animationDuration: `${3 + index * 0.5}s`
+                }}
+              >
+                <div className="text-center space-y-3">
+                  <div className="mx-auto w-12 h-12 bg-background/20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                    <stat.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-white">{stat.number}</div>
+                  <div className="text-sm text-white/80 font-medium">{stat.label}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
