@@ -1,8 +1,26 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Download, Mail } from 'lucide-react';
 import webDeveloperGif from '@/assets/web-developer-animated.gif';
 
 const Hero = () => {
+  const [displayedText, setDisplayedText] = useState('');
+  const fullText = "Web Developer & Innovator";
+  
+  useEffect(() => {
+    let index = 0;
+    const timer = setInterval(() => {
+      if (index < fullText.length) {
+        setDisplayedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 100);
+    
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -41,9 +59,11 @@ const Hero = () => {
               <span className="text-foreground">Hi, I'm </span>
               <span className="bg-gradient-neon bg-clip-text text-transparent">Tejas M</span>
             </h1>
-            <div className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground">
-              <span className="block">Web Developer & </span>
-              <span className="bg-gradient-accent bg-clip-text text-transparent font-semibold">Innovator</span>
+            <div className="text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground min-h-[3rem] md:min-h-[4rem]">
+              <span className="bg-gradient-accent bg-clip-text text-transparent font-semibold">
+                {displayedText}
+                <span className="animate-pulse">|</span>
+              </span>
             </div>
           </div>
 

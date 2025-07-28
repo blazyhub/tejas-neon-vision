@@ -53,13 +53,17 @@ const Footer = () => {
               </a>
               <div className="flex space-x-4 pt-2">
                 <a 
-                  href="#"
+                  href="https://www.linkedin.com/in/tejas-m-324b2a25a/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-secondary/50 rounded-lg text-muted-foreground hover:text-neon-blue hover:bg-neon-blue/10 transition-all duration-300"
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
                 <a 
-                  href="#"
+                  href="https://github.com/blazyhub"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-secondary/50 rounded-lg text-muted-foreground hover:text-neon-green hover:bg-neon-green/10 transition-all duration-300"
                 >
                   <Github className="h-4 w-4" />
