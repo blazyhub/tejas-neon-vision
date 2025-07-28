@@ -18,15 +18,19 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in-up');
+          entry.target.classList.remove('opacity-0');
+          entry.target.classList.add('animate-fade-in-up', 'opacity-100');
         }
       });
     }, observerOptions);
 
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    // Add a small delay to ensure DOM is ready
+    setTimeout(() => {
+      const sections = document.querySelectorAll('section[id]:not(#home)');
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
+    }, 100);
 
     return () => observer.disconnect();
   }, []);
@@ -35,11 +39,11 @@ const Index = () => {
     <div className="min-h-screen bg-background font-inter">
       <Navigation />
       <section id="home"><Hero /></section>
-      <section id="about" className="opacity-0"><About /></section>
-      <section id="experience" className="opacity-0"><Experience /></section>
-      <section id="skills" className="opacity-0"><Skills /></section>
-      <section id="projects" className="opacity-0"><Projects /></section>
-      <section id="contact" className="opacity-0"><Contact /></section>
+      <section id="about" className="opacity-0 transition-opacity duration-700"><About /></section>
+      <section id="experience" className="opacity-0 transition-opacity duration-700"><Experience /></section>
+      <section id="skills" className="opacity-0 transition-opacity duration-700"><Skills /></section>
+      <section id="projects" className="opacity-0 transition-opacity duration-700"><Projects /></section>
+      <section id="contact" className="opacity-0 transition-opacity duration-700"><Contact /></section>
       <Footer />
     </div>
   );
