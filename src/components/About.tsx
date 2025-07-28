@@ -55,14 +55,11 @@ const About = () => {
                 size="lg" 
                 className="group"
                 onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/resume.pdf';
-                  link.download = 'Tejas_M_Resume.pdf';
-                  link.click();
+                  window.open('https://pdf.ac/1x7vba', '_blank');
                 }}
               >
                 <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
-                Download Resume
+                View Resume
               </Button>
             </div>
           </div>
