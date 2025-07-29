@@ -36,30 +36,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background font-inter relative">
-      {/* Background wallpaper */}
-      <div className="wallpaper-bg"></div>
-      
       {/* Floating background elements */}
       <div className="floating-bg"></div>
       <div className="floating-bg"></div>
       <div className="floating-bg"></div>
       <div className="floating-bg"></div>
       <div className="floating-bg"></div>
-      <div className="floating-bg"></div>
-      
-      {/* Particle effects */}
-      <div className="particle-bg">
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-      </div>
       
       <Navigation />
       <section id="home"><Hero /></section>
