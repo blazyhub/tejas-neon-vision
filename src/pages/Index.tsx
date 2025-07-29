@@ -18,17 +18,16 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.remove('opacity-0');
-          entry.target.classList.add('animate-fade-in-up', 'opacity-100');
+          entry.target.classList.add('visible');
         }
       });
     }, observerOptions);
 
     // Add a small delay to ensure DOM is ready
     setTimeout(() => {
-      const sections = document.querySelectorAll('section[id]:not(#home)');
-      sections.forEach((section) => {
-        observer.observe(section);
+      const floatingElements = document.querySelectorAll('.float-on-scroll');
+      floatingElements.forEach((element) => {
+        observer.observe(element);
       });
     }, 100);
 
@@ -36,14 +35,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background font-inter">
+    <div className="min-h-screen bg-background font-inter relative">
+      {/* Floating background elements */}
+      <div className="floating-bg"></div>
+      <div className="floating-bg"></div>
+      <div className="floating-bg"></div>
+      <div className="floating-bg"></div>
+      <div className="floating-bg"></div>
+      
       <Navigation />
       <section id="home"><Hero /></section>
-      <section id="about" className="opacity-0 transition-opacity duration-700"><About /></section>
-      <section id="experience" className="opacity-0 transition-opacity duration-700"><Experience /></section>
-      <section id="skills" className="opacity-0 transition-opacity duration-700"><Skills /></section>
-      <section id="projects" className="opacity-0 transition-opacity duration-700"><Projects /></section>
-      <section id="contact" className="opacity-0 transition-opacity duration-700"><Contact /></section>
+      <section id="about" className="float-on-scroll"><About /></section>
+      <section id="experience" className="float-on-scroll float-left"><Experience /></section>
+      <section id="skills" className="float-on-scroll float-right"><Skills /></section>
+      <section id="projects" className="float-on-scroll"><Projects /></section>
+      <section id="contact" className="float-on-scroll float-left"><Contact /></section>
       <Footer />
     </div>
   );

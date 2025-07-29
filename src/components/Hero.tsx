@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Download, Mail } from 'lucide-react';
+import { ChevronDown, Download, Mail, Github } from 'lucide-react';
 import webDeveloperGif from '@/assets/web-developer-animated.gif';
 
 const Hero = () => {
@@ -94,13 +94,31 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Quick Contact */}
-          <div className="flex justify-center space-x-6 pt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          {/* Quick Contact & Social Links */}
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 pt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <a 
               href="mailto:tejas200412@gmail.com"
-              className="text-muted-foreground hover:text-neon-cyan transition-colors duration-300"
+              className="text-muted-foreground hover:text-neon-cyan transition-colors duration-300 flex items-center space-x-2"
             >
-              📧 tejas200412@gmail.com
+              <Mail className="h-4 w-4" />
+              <span>tejas200412@gmail.com</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/tejas-m-324b2a25a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-neon-blue transition-colors duration-300 flex items-center space-x-2"
+            >
+              <span>LinkedIn</span>
+            </a>
+            <a 
+              href="https://github.com/your-github-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-neon-green transition-colors duration-300 flex items-center space-x-2"
+            >
+              <Github className="h-4 w-4" />
+              <span>GitHub</span>
             </a>
           </div>
         </div>
