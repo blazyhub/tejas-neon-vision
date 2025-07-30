@@ -157,9 +157,11 @@ const Projects = () => {
           <p className="text-muted-foreground mb-6">
             Want to see more of my work? Check out my GitHub repository for additional projects and code samples.
           </p>
-          <Button variant="neon-outline" size="lg">
-            <Github className="mr-2 h-5 w-5" />
-            View All Projects on GitHub
+          <Button variant="neon-outline" size="lg" asChild>
+            <a href="https://github.com/blazyhub" target="_blank" rel="noopener noreferrer">
+              <Github className="mr-2 h-5 w-5" />
+              View All Projects on GitHub
+            </a>
           </Button>
         </div>
       </div>

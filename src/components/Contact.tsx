@@ -67,7 +67,7 @@ const Contact = () => {
       icon: <Linkedin className="h-6 w-6" />,
       title: "LinkedIn",
       content: "Connect with me",
-      action: "#",
+      action: "https://www.linkedin.com/in/tejas-m-324b2a25a/",
       color: "neon-cyan"
     },
     {
