@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Download, Mail } from 'lucide-react';
+import { ChevronDown, Download, Mail, Linkedin, Github } from 'lucide-react';
 import webDeveloperGif from '@/assets/web-developer-animated.gif';
-import aiRobot from '@/assets/ai-robot.png';
+import FuturisticRobot from './FuturisticRobot';
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -63,18 +63,7 @@ const Hero = () => {
 
       {/* AI Robot that follows cursor */}
       <div className="absolute top-20 right-20 z-20">
-        <div 
-          className="w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 ease-out"
-          style={{ 
-            transform: `perspective(1000px) rotateX(${robotRotation.x}deg) rotateY(${robotRotation.y}deg)` 
-          }}
-        >
-          <img 
-            src={aiRobot} 
-            alt="AI Assistant"
-            className="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.7)] transition-all duration-300"
-          />
-        </div>
+        <FuturisticRobot rotation={robotRotation} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -134,14 +123,63 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Quick Contact */}
-          <div className="flex justify-center space-x-6 pt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          {/* Quick Contact and Social Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <a 
               href="mailto:tejas200412@gmail.com"
               className="text-muted-foreground hover:text-neon-cyan transition-colors duration-300"
             >
               📧 tejas200412@gmail.com
             </a>
+            
+            {/* Social Media Buttons */}
+            <div className="flex gap-4">
+              <Button
+                variant="outline"
+                size="icon"
+                asChild
+                className="border-neon-blue/30 hover:border-neon-blue hover:bg-neon-blue/10 transition-all duration-300"
+              >
+                <a 
+                  href="https://www.linkedin.com/in/tejas-m-324b2a25a/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="h-5 w-5 text-neon-blue" />
+                </a>
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="icon"
+                asChild
+                className="border-neon-cyan/30 hover:border-neon-cyan hover:bg-neon-cyan/10 transition-all duration-300"
+              >
+                <a 
+                  href="mailto:tejas200412@gmail.com"
+                  aria-label="Send Email"
+                >
+                  <Mail className="h-5 w-5 text-neon-cyan" />
+                </a>
+              </Button>
+              
+              <Button
+                variant="outline"
+                size="icon"
+                asChild
+                className="border-neon-purple/30 hover:border-neon-purple hover:bg-neon-purple/10 transition-all duration-300"
+              >
+                <a 
+                  href="https://github.com/blazyhub" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Profile"
+                >
+                  <Github className="h-5 w-5 text-neon-purple" />
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
