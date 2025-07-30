@@ -67,7 +67,7 @@ const Contact = () => {
       icon: <Linkedin className="h-6 w-6" />,
       title: "LinkedIn",
       content: "Connect with me",
-      action: "https://www.linkedin.com/in/tejas-m-324b2a25a/",
+      action: "#",
       color: "neon-cyan"
     },
     {
@@ -97,7 +97,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold mb-6">
-                Contact <span className="text-neon-cyan">Information</span>
+                Let's <span className="text-neon-cyan">Connect</span>
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 I'm always excited to work on new projects and collaborate with innovative teams. 
@@ -131,7 +131,7 @@ const Contact = () => {
                 return (
                   <Card 
                     key={index}
-                    className="bg-card/50 backdrop-blur-sm border-border hover:border-neon-blue/50 transition-all duration-300 hover:shadow-card group float-on-scroll"
+                    className="bg-card/50 backdrop-blur-sm border-border hover:border-neon-blue/50 transition-all duration-300 hover:shadow-card group"
                   >
                     <CardContent className="p-6">
                       <div className="flex items-center space-x-4">
@@ -164,6 +164,24 @@ const Contact = () => {
               })}
             </div>
 
+            {/* Quick Stats */}
+            <div className="bg-card/30 backdrop-blur-sm rounded-lg p-6 border border-border">
+              <h4 className="font-semibold text-foreground mb-4">Why Work With Me?</h4>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neon-green rounded-full"></div>
+                  <span className="text-muted-foreground text-sm">Quick response within 24 hours</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neon-blue rounded-full"></div>
+                  <span className="text-muted-foreground text-sm">Clear communication throughout the project</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-neon-cyan rounded-full"></div>
+                  <span className="text-muted-foreground text-sm">Delivered on time, every time</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Contact Form */}

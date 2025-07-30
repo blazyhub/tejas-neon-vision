@@ -18,16 +18,17 @@ const Index = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.remove('opacity-0');
+          entry.target.classList.add('animate-fade-in-up', 'opacity-100');
         }
       });
     }, observerOptions);
 
     // Add a small delay to ensure DOM is ready
     setTimeout(() => {
-      const floatingElements = document.querySelectorAll('.float-on-scroll');
-      floatingElements.forEach((element) => {
-        observer.observe(element);
+      const sections = document.querySelectorAll('section[id]:not(#home)');
+      sections.forEach((section) => {
+        observer.observe(section);
       });
     }, 100);
 
@@ -35,39 +36,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background font-inter relative">
-      {/* Background wallpaper */}
-      <div className="wallpaper-bg"></div>
-      
-      {/* Floating background elements */}
-      <div className="floating-bg"></div>
-      <div className="floating-bg"></div>
-      <div className="floating-bg"></div>
-      <div className="floating-bg"></div>
-      <div className="floating-bg"></div>
-      <div className="floating-bg"></div>
-      
-      {/* Particle effects */}
-      <div className="particle-bg">
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-      </div>
-      
+    <div className="min-h-screen bg-background font-inter">
       <Navigation />
       <section id="home"><Hero /></section>
-      <section id="about" className="float-on-scroll"><About /></section>
-      <section id="experience" className="float-on-scroll float-left"><Experience /></section>
-      <section id="skills" className="float-on-scroll float-right"><Skills /></section>
-      <section id="projects" className="float-on-scroll"><Projects /></section>
-      <section id="contact" className="float-on-scroll float-left"><Contact /></section>
+      <section id="about" className="opacity-0 transition-opacity duration-700"><About /></section>
+      <section id="experience" className="opacity-0 transition-opacity duration-700"><Experience /></section>
+      <section id="skills" className="opacity-0 transition-opacity duration-700"><Skills /></section>
+      <section id="projects" className="opacity-0 transition-opacity duration-700"><Projects /></section>
+      <section id="contact" className="opacity-0 transition-opacity duration-700"><Contact /></section>
       <Footer />
     </div>
   );

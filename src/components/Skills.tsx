@@ -77,7 +77,7 @@ const Skills = () => {
             return (
               <Card 
                 key={index}
-                className="bg-card/50 backdrop-blur-sm border-border hover:border-neon-blue/50 transition-all duration-300 hover:shadow-card group float-on-scroll"
+                className="bg-card/50 backdrop-blur-sm border-border hover:border-neon-blue/50 transition-all duration-300 hover:shadow-card group animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="text-center pb-4">

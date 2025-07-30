@@ -36,7 +36,7 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Bio Section */}
-          <div className="space-y-6 float-on-scroll float-left">
+          <div className="space-y-6 animate-slide-in-left">
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Motivated and detail-oriented <span className="text-neon-cyan font-semibold">Web Developer</span> with hands-on experience in designing and developing user-centric websites and mobile applications.
@@ -65,7 +65,7 @@ const About = () => {
           </div>
 
           {/* Education Section */}
-          <div className="space-y-6 float-on-scroll float-right">
+          <div className="space-y-6">
             <h3 className="text-2xl font-bold mb-6 text-center lg:text-left">
               Educational <span className="text-neon-green">Background</span>
             </h3>
