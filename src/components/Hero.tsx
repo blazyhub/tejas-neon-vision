@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Download, Mail } from 'lucide-react';
 import webDeveloperGif from '@/assets/web-developer-animated.gif';
+import aiRobot from '@/assets/ai-robot.png';
 
 const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [robotRotation, setRobotRotation] = useState({ x: 0, y: 0 });
   const fullText = "Web Developer & Innovator";
   
   useEffect(() => {
@@ -21,6 +24,27 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      
+      // Calculate position relative to center
+      const centerX = innerWidth / 2;
+      const centerY = innerHeight / 2;
+      
+      // Calculate rotation based on mouse position
+      const rotateX = ((clientY - centerY) / centerY) * 20; // Max 20deg rotation
+      const rotateY = ((clientX - centerX) / centerX) * 20; // Max 20deg rotation
+      
+      setMousePosition({ x: clientX, y: clientY });
+      setRobotRotation({ x: -rotateX, y: rotateY }); // Inverted X for natural movement
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -35,6 +59,22 @@ const Hero = () => {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-neon-blue/20 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-cyan/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-neon-purple/20 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* AI Robot that follows cursor */}
+      <div className="absolute top-20 right-20 z-20">
+        <div 
+          className="w-24 h-24 md:w-32 md:h-32 transition-transform duration-300 ease-out"
+          style={{ 
+            transform: `perspective(1000px) rotateX(${robotRotation.x}deg) rotateY(${robotRotation.y}deg)` 
+          }}
+        >
+          <img 
+            src={aiRobot} 
+            alt="AI Assistant"
+            className="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:drop-shadow-[0_0_30px_rgba(59,130,246,0.7)] transition-all duration-300"
+          />
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
